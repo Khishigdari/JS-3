@@ -63,7 +63,7 @@ find3or5orBoth(45);
 find3or5orBoth(30);
 find3or5orBoth(27);
 
-// BODLOGO 5
+// BODLOGO 5 !!!!!!
 function findLeapYear(a) {
   //   if (a % 4 == 0 || a % 400 == 0) {
   //     console.log("It is Leap Year");
@@ -85,3 +85,46 @@ function findLeapYear(a) {
 findLeapYear(2000);
 findLeapYear(2024);
 findLeapYear(2025);
+
+// BODLOGO 6
+function findDays(a) {
+  if (a == 1) {
+    console.log("Monday");
+  }
+  if (a == 2) {
+    console.log("Tuesday");
+  }
+  if (a == 3) {
+    console.log("Wednesday");
+  }
+  if (a == 4) {
+    console.log("Thursday");
+  }
+  if (a == 5) {
+    console.log("Friday");
+  }
+  if (a == 6) {
+    console.log("Saturday");
+  }
+  if (a == 7) {
+    console.log("Sunday");
+  }
+}
+findDays(1);
+findDays(5);
+findDays(6);
+
+// BODLOGO 7
+function findProfit(price, quantity, sellingPrice, soldQuantity) {
+  let a = price * quantity;
+  let b = sellingPrice * soldQuantity;
+  let result = a - b;
+  if (a > b) {
+    console.log(result + " (Aldagdaltai)");
+  } else {
+    console.log(result + " (Ashigtai)");
+  }
+}
+findProfit(100, 20, 150, 10);
+findProfit(200, 20, 150, 20);
+findProfit(100, 20, 200, 15);
