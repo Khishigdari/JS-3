@@ -120,9 +120,9 @@ let minPositive = findMinPositive(grades4);
 console.log("Minimum Positive = ", minPositive);
 
 //Array dotorh buh tegsh toonuudiin dundaj oloh function !!!!!!
-let grades5 = [100, 48, 98, 75, 90, 250, -10, -45];
+let grades5 = [100, 47, 85, 75, 95, 255, -15, -45];
 function findAvgofEven(arr) {
-  let avg = 0;
+  // let avg = 0;
   for (i = 0; i < arr.length; i++) {
     if (arr[i] % 2 == 0) {
       let sum = 0;
@@ -131,9 +131,9 @@ function findAvgofEven(arr) {
         sum = sum + arr[i];
       }
       let avg = sum / arr.length;
+      return avg;
     }
   }
-  return avg;
 }
 let avgofEven = findAvgofEven(grades5);
 console.log("Average of Even = ", avgofEven);

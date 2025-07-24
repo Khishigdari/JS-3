@@ -71,11 +71,10 @@ function findLeapYear(a) {
   //   if (a % 100 == 0 && a % 4 == 0) {
   //     console.log("It is not Leap Year");
   //   }
-  if (a % 400 == 0) {
-    console.log("It is not Leap Year");
-  } else if (a % 4 == 0) {
+  if (a % 400 == 0 || a % 4 == 0) {
+    console.log("It is Leap Year");
     if (a % 100 == 0) {
-      console.log("It is Leap Year");
+      console.log("It is not Leap Year");
     } else {
       console.log("It is Leap Year");
     }
@@ -118,13 +117,14 @@ findDays(6);
 function findProfit(price, quantity, sellingPrice, soldQuantity) {
   let a = price * quantity;
   let b = sellingPrice * soldQuantity;
-  let result = a - b;
+  let result = b - a;
   if (a > b) {
     console.log(result + " (Aldagdaltai)");
   } else {
-    console.log(result + " (Ashigtai)");
+    console.log("+", result + " (Ashigtai)");
   }
 }
 findProfit(100, 20, 150, 10);
 findProfit(200, 20, 150, 20);
 findProfit(100, 20, 200, 15);
+findProfit(100, 20, 100, 15);
