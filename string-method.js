@@ -1,4 +1,4 @@
-let name = khishigdari;
+let name = "khishigdari";
 //function -> method
 console.log("name.length = ", name.length);
 console.log("name.charAt = ", name.charAt(0));

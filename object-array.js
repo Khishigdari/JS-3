@@ -379,6 +379,7 @@ const findStudentsByName = (students, name) => {
   // return "Surgach Oldsongui";
 };
 const studentsByName = findStudentsByName(students, "boldo");
+// const studentsByNameLowerCase = studentsByName.toLowerCase;
 console.log("Find Students By Name:", studentsByName);
 const studentsByName1 = findStudentsByName(students, "dorjo");
 console.log("Find Students By Name:", studentsByName1);
