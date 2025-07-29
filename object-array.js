@@ -16,9 +16,9 @@ let students = [
   { name: "dorjo", age: 15, grade: 30, balance: 950, gender: "male" },
   { name: "dorjo", age: 15, grade: 30, balance: 950, gender: "male" },
   { name: "dulam", age: 15, grade: 5, balance: 950, gender: "male" },
-  { name: "tsetsgee", age: 30, grade: 100, balance: 1500, gender: "female" },
+  { name: "tsetsgee", age: 30, grade: 100, balance: 15000, gender: "female" },
   { name: "bataa", age: 10, grade: 50, balance: 1250, gender: "male" },
-  { name: "suvd", age: 32, grade: 50, balance: 2400, gender: "female" },
+  { name: "suvd", age: 32, grade: 50, balance: 24000, gender: "female" },
 ];
 
 //---find the top student
@@ -385,22 +385,59 @@ const studentsByName1 = findStudentsByName(students, "dorjo");
 console.log("Find Students By Name:", studentsByName1);
 //!!!!!! .toLowerCase heregleed tomoor ch jijgeer ch bichsen gardag bolgoh !!!!!!
 
-// Бодлого 5
+// Бодлого 5 
 // Бүх сурагчдыг онооны дарааллаар ихээс бага руу эрэмбэлдэг функц бич. (sort ашиглах)
 //points.sort(function(a, b){return b-a});
-const sortStudentsByGrade = (arr) => {
-  let filteredStudents = [];
-  let count = 0;
+// -------const sortStudentsByGrade = (arr) => {
+//   let filteredStudents = [];
+//   let count = 0;
 
-  for (i = 0; i < arr.length; i++) {
-    filteredStudents[count] = arr[0].grade;
-    // filteredStudents.sort(function (a, b) {
-    //   return b - a;
-    // });
-    count++;
-  }
-  return filteredStudents;
-};
-console.log(filteredStudents);
+//   for (i = 0; i < arr.length; i++) {
+//     filteredStudents[count] = arr[0].grade;
+//     // filteredStudents.sort(function (a, b) {
+//     //   return b - a;
+//     // });
+//     count++;
+//   }
+//   return filteredStudents;
+// };
+// console.log(filteredStudents);------
+
+students.sort((student2, student1)=>{
+  return student1.grade - student2.grade
+})
+console.log("Sort Students By Grade:", students)
+
+
+
 // const studentsByGrade = sortStudentsByGrade(students);
 // console.log(studentsByGrade);
+
+// Бодлого 6
+// balance нь 10000-аас их сурагчдыг richStudents гэж нэрлээд, зөвхөн нэр болон балансын мэдээлэлтэйгээр шинэ массив үүсгэж буцаа.
+const findRichStudents = (arr) => {
+  let richStudents = []
+  let count = 0
+  for (i=0; i<arr.length; i++) {
+    if (arr[i].balance > 10000) {
+      richStudents[count] = {
+        name: arr[i].name,
+        balance: arr[i].balance
+      }
+      count++
+    }
+  }
+  return richStudents
+}
+const filteredRichStudents = findRichStudents(students)
+console.log("Students with more balance than 10000:", filteredRichStudents)
+
+// Бодлого 7
+// Нэр бүрээр хэчнээн сурагч байгаа тоог тоолж, дараах хэлбэртэй объект буцаа:
+// { boldo: 3, dorjo: 1, bataa: 1 }
+
+
+// Бодлого 8
+// Сурагчдын gender тус бүрээр онооны дундаж хэд байгааг тооцоолж буцаадаг функц бич.
+// Жишээ:
+// { male: 30, female: 60 }
